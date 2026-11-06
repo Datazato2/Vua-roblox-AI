@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="介绍 Roblox之王 AI：帮助阅读和分析文档与英语视频的 AI Agent。">
+<title>Roblox之王 AI — 文档与视频分析助手</title>
+<style>
+:root{color-scheme:light;--bg:#f3faf4;--panel:#fff;--panel2:#e8f5eb;--accent:#218447;--text:#1b2a20;--muted:#536b5a;--line:#d4e4d8;--red:#b42332;--yellow:#8a6100;--green:#197443}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:17px/1.72 "Segoe UI","Microsoft YaHei",Arial,sans-serif}
+.wrap{width:min(1050px,calc(100% - 36px));margin:auto}header{padding:38px 0 18px}h1{font-size:clamp(2.3rem,5vw,3.4rem);line-height:1.15;color:var(--accent);margin:0 0 12px;letter-spacing:-.03em}.subtitle{font-size:1.17rem;color:var(--muted);margin:0 0 34px}
+.definition{background:var(--panel2);border-left:4px solid var(--accent);border-radius:0 12px 12px 0;padding:19px 23px;margin:0 0 20px}
+section{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:27px 30px;margin:20px 0 30px}
+h2{font-size:1.45rem;color:var(--accent);margin:0 0 18px}p{margin:0 0 17px}p:last-child{margin-bottom:0}
+table{width:100%;border-collapse:collapse;margin-top:14px}th,td{text-align:left;padding:13px 12px;border-bottom:1px solid var(--line);vertical-align:top}th{color:#54705d}td:first-child{font-weight:600}
+.action{display:flex;gap:14px;align-items:flex-start;padding:13px 0;border-bottom:1px solid var(--line)}.action:last-child{border-bottom:0}.num{flex:0 0 38px;height:38px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:800}.tag{display:inline-block;min-width:76px;text-align:center;border-radius:999px;padding:2px 11px;margin-right:7px;font-weight:800;font-size:.8rem}.must{background:#fdebed;color:var(--red)}.should{background:#fff4d6;color:#815d00}.may{background:#eaf0ed;color:#50675a}
+.columns{display:grid;grid-template-columns:1fr 1fr;gap:16px}.mini{border:1px solid var(--line);border-radius:12px;padding:17px;background:#fff}.mini h3{margin:0 0 8px;color:var(--accent);font-size:1.06rem}.note{border-left:4px solid #e2ad27;padding:12px 15px;background:#fff8e8;border-radius:0 9px 9px 0;color:#694f17}
+ul{margin:8px 0 0;padding-left:22px}li{margin:5px 0}.foot{color:var(--muted);font-size:.9rem;padding:6px 0 36px}
+.flowchart{margin-top:24px;padding:22px;background:#edf6ef;border:1px solid var(--line);border-radius:14px;text-align:center}.flow-node{width:min(100%,760px);margin:0 auto;background:#fff;border:1px solid #b9cfc0;border-radius:11px;padding:19px 22px}.flow-node b{display:block;margin-bottom:8px;color:var(--text);font-size:1.04rem}.flow-node p{margin:0;color:var(--muted)}.flow-node.decision{width:min(100%,460px);border-color:var(--accent);background:#e8f5eb}.flow-arrow{height:42px;display:grid;place-items:center;color:var(--accent);font-size:1.7rem;line-height:1}.flow-branches{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;width:min(100%,760px);margin:0 auto}.flow-branch{border:1px solid var(--line);border-radius:11px;padding:17px;text-align:left;background:#fff}.flow-branch b{display:block;margin-bottom:8px;color:var(--accent)}.flow-branch p{margin:0;color:var(--muted)}.flow-branch.warn{border-color:#e7cf98;background:#fffaf0}.flow-branch.warn b{color:#8a6100}.flow-branch.done{border-color:#b8d7c0;background:#f0f8f1}.flow-branch.done b{color:var(--green)}.flow-caption{color:var(--muted);font-size:.9rem;margin:5px auto 14px}
+@media(max-width:650px){.wrap{width:calc(100% - 26px)}header{padding-top:26px}section{padding:21px 18px}.columns{grid-template-columns:1fr}table{font-size:.92rem}th,td{padding:10px 7px}.definition{padding:16px}.flowchart{padding:14px}.flow-branches{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header>
+<h1>🤖 Roblox之王 AI</h1>
+<p class="subtitle">帮助阅读文档、分析内容，并从英语视频中学习表达的 AI Agent</p>
+<div class="definition"><b>📌 一句话介绍：</b>Roblox之王 AI 接收通过 Lark 发送的 Word、PDF 文档或视频链接，分析内容，并用越南语清晰呈现重点、论点、结论和词汇学习内容。</div>
+</header>
+
+<section>
+<h2>💡 这是什么？</h2>
+<p><b>Roblox之王 AI</b> 是一款面向个人阅读与学习的 AI Agent。对于文档，它旨在通读内容、解释难懂概念、区分原文信息与解读，并总结主要含义。</p>
+<p>对于英语视频，如果能够访问视频或 transcript，Agent 可以整理有用的单词和短语，并说明语境含义、用法、词性、IPA、估算 CEFR 等级以及时间戳（在数据允许时）。</p>
+<p>Agent 帮助你理解和学习；重要信息仍应回到原始材料核对。</p>
+</section>
+
+<section>
+<h2>⏱️ 它能减少哪些工作？</h2>
+<table>
+<thead><tr><th>任务</th><th>以前</th><th>现在可获得的帮助</th></tr></thead>
+<tbody>
+<tr><td>阅读长文档</td><td>自己通读并逐段做笔记</td><td>生成结构化摘要</td></tr>
+<tr><td>理解难懂概念</td><td>自行查资料并梳理观点关系</td><td>结合文档语境解释概念</td></tr>
+<tr><td>寻找论点与结论</td><td>反复查找相关段落</td><td>区分核心观点、论据和原文结论</td></tr>
+<tr><td>学习英语视频</td><td>自行寻找 transcript 并查词</td><td>在数据允许时整理词汇、用法和时间戳</td></tr>
+</tbody>
+</table>
+</section>
+
+<section>
+<h2>📥 输入与输出</h2>
+<div class="columns">
+<div class="mini"><h3>可提供的输入</h3><ul><li>通过 Lark 发送的 Word 或 PDF 文件</li><li>可进行 OCR 的扫描 PDF 或图片</li><li>可访问的视频链接或 transcript</li><li>具体要求：摘要、分析、概念解释或词汇学习</li></ul></div>
+<div class="mini"><h3>预期输出</h3><ul><li>清晰易懂的越南语摘要</li><li>结合语境解释难懂概念</li><li>主题、论点、证据、结论与含义</li><li>词汇表：用法、词性、IPA、估算 CEFR 等级及可用的时间戳</li></ul></div>
+</div>
+</section>
+
+<section>
+<h2>⚙️ 工作步骤</h2>
+<p>流程依据项目中的工作流文档。处理方式会随输入类型而变化。</p>
+<div class="action"><span class="num">1</span><div><span class="tag must">必须</span>接收用户通过 Lark 发送的文件或链接。</div></div>
+<div class="action"><span class="num">2</span><div><span class="tag must">必须</span>识别输入类型。Word/PDF/图片：提取文字，扫描件必要时使用 OCR。视频：在可访问时检查画面与音频，并生成 transcript。</div></div>
+<div class="action"><span class="num">3</span><div><span class="tag must">必须</span>确认内容可访问且足够清晰。如有问题，说明问题所在并请用户提供其他版本或补充信息；若仍不足，则停止处理无法完成的部分并说明限制。</div></div>
+<div class="action"><span class="num">4</span><div><span class="tag must">必须</span>分析主题、难懂概念、核心观点、论点、结论及其含义。</div></div>
+<div class="action"><span class="num">5</span><div><span class="tag should">应该</span>如果是英语视频，在证据充分时整理单词/短语、语境含义、用法、词性、估算 CEFR 等级、IPA 和时间戳。</div></div>
+<div class="action"><span class="num">6</span><div><span class="tag must">必须</span>用越南语撰写报告，并检查完整性、清晰度、依据和引用；未达标准时进行补充或修改。</div></div>
+<div class="action"><span class="num">7</span><div><span class="tag must">必须</span>通过 Lark 发送结果，并说明仍存在的限制或未验证之处。</div></div>
+</section>
+
+<section>
+<h2>🧭 流程图</h2>
+<p>下图将工作流中的步骤和分支整理成易读的流程。只有在相应工具和访问权限可用时，相关处理步骤才能执行。</p>
+<div class="flowchart" role="img" aria-label="从 Lark 接收文件到发送分析报告的流程图">
+<div class="flow-node"><b>开始 · 通过 Lark 接收输入</b><p>接收用户发送的文件或链接。</p></div>
+<div class="flow-arrow">↓</div>
+<div class="flow-node decision"><b>输入属于哪种类型？</b></div>
+<div class="flow-arrow">↓</div>
+<div class="flow-branches">
+<div class="flow-branch"><b>Word · PDF · 图片</b><p>提取文字；扫描件或图片使用 OCR。</p></div>
+<div class="flow-branch"><b>视频 · 视频链接</b><p>在可访问时检查画面/音频，并生成 transcript。</p></div>
+</div>
+<div class="flow-arrow">↓</div>
+<div class="flow-node decision"><b>内容是否清晰且可以访问？</b></div>
+<div class="flow-caption">如果是，继续分析。若否 ↓</div>
+<div class="flow-node"><b>请用户提供其他版本或补充说明</b><p>指出无法读取、无法听清或缺失的部分。</p></div>
+<div class="flow-arrow">↓</div>
+<div class="flow-node decision"><b>信息是否足以继续？</b></div>
+<div class="flow-arrow">↓</div>
+<div class="flow-branches">
+<div class="flow-branch warn"><b>否 → 停止无法处理的部分</b><p>说明限制以及未能处理的内容。</p></div>
+<div class="flow-branch"><b>是 → 重新检查</b><p>继续提取并检查内容，然后返回清晰度检查步骤。</p></div>
+</div>
+<div class="flow-caption">通过清晰度检查后，继续主流程 ↓</div>
+<div class="flow-arrow">↓</div>
+<div class="flow-node"><b>分析内容</b><p>识别主题、概念、核心观点、论点、结论和含义。</p></div>
+<div class="flow-arrow">↓</div>
+<div class="flow-node decision"><b>这是英语视频吗？</b></div>
+<div class="flow-arrow">↓</div>
+<div class="flow-branches">
+<div class="flow-branch"><b>是</b><p>整理单词/短语：含义、用法、词性、CEFR、IPA 和有依据的时间戳。</p></div>
+<div class="flow-branch"><b>否</b><p>直接撰写越南语报告。</p></div>
+</div>
+<div class="flow-arrow">↓</div>
+<div class="flow-node"><b>撰写并检查越南语报告</b><p>检查完整性、清晰度、依据和引用。</p></div>
+<div class="flow-arrow">↓</div>
+<div class="flow-node decision"><b>报告达到标准了吗？</b></div>
+<div class="flow-caption">未达到 → 修改并重新检查 · 达到 ↓</div>
+<div class="flow-node done"><b>通过 Lark 发送结果 · 完成</b><p>如有需要，同时说明限制。</p></div>
+</div>
+</section>
+
+<section>
+<h2>🛡️ 规范与能力边界</h2>
+<div class="columns">
+<div class="mini"><h3>Agent 应做到</h3><ul><li>明确区分原文内容与解读</li><li>说明不确定性和数据限制</li><li>不编造页码、时间戳、引文或证据</li><li>无法读取或内容模糊时请用户协助</li></ul></div>
+<div class="mini"><h3>Agent 不应做</h3><ul><li>不替用户作出重要决定</li><li>不把 OCR/ASR 结果说成绝对准确</li><li>不擅自分享私人内容或执行未被要求的操作</li><li>不保证所有链接或文件都能访问</li></ul></div>
+</div>
+</section>
+
+<section>
+<h2>🧪 输出示例</h2>
+<div class="mini">
+<p><b>示例要求：</b>“请阅读这份材料，解释难懂概念，并说明论点与结论。”</p>
+<p><b>摘要：</b>作者介绍了一个问题、支持其观点的理由以及最终结论。</p>
+<p><b>原文论点：</b>“……” <span style="color:var(--muted)">（在能够确定时标注原文位置）</span></p>
+<p><b>通俗解释：</b>可以把这个观点理解为……</p>
+<p><b>限制：</b>现有数据或证据可能不足以确认因果关系。</p>
+</div>
+<p class="note" style="margin-top:17px"><b>说明：</b>以上仅用于展示格式，不是对真实文件的分析结果。</p>
+</section>
+
+<section>
+<h2>🚀 如何使用</h2>
+<p>打开 Lark，找到已连接 Hermes 的机器人，然后发送 Word/PDF 文件或视频链接，并说明你希望它完成什么任务。</p>
+<div class="definition"><b>📨 示例消息：</b><br>“请通读这份材料，用越南语总结，解释难懂概念，列出论点和结论。请明确区分原文内容与解读，并说明任何限制。”</div>
+<p>对于英语视频，也可以要求整理词汇表，包括语境含义、用法、词性、IPA、估算 CEFR 等级，以及 transcript 能支持的时间戳。</p>
+</section>
+
+<section>
+<h2>🛠️ 设计中使用的工具</h2>
+<div class="columns">
+<div class="mini"><h3>Codex</h3><p>用于创建和修改 Agent 的项目材料，例如 Job Card、Workflow、Profile 和介绍网页。</p></div>
+<div class="mini"><h3>Hermes Agent</h3><p>用于根据 Profile 运行 Agent 并处理任务。实际状态可能随设备配置而变化。</p></div>
+<div class="mini"><h3>Lark / Feishu</h3><p>用于发送请求并接收回复。已检查文字消息往返；文件访问取决于权限和配置。</p></div>
+<div class="mini"><h3>DeepSeek</h3><p>用于理解请求并生成 Agent 的回答内容。</p></div>
+</div>
+</section>
+
+<section>
+<h2>⚠️ 使用提示</h2>
+<ul>
+<li>请对照原文核实摘要和重要结论。</li>
+<li>扫描 PDF 或视频 transcript 可能存在 OCR/ASR 识别错误或遗漏。</li>
+<li>Agent 只能读取当前账户和配置允许访问的材料。</li>
+<li>不要发送密码、API key、token 或不必要的私人信息。</li>
+<li>此展示页为静态介绍，不提供文件上传，也不能让访客调用真实 Agent。</li>
+</ul>
+</section>
+
+<footer class="foot">Roblox之王 AI · 静态介绍页 · 不含凭据或用户私人数据。</footer>
+</main>
+</body>
+</html>
